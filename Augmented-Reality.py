@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 
 input_image = cv2.imread('Maha.jpeg')
-input_image = cv2.resize(input_image, (300,300), interpolation = cv2.INTER_AREA)
+input_image = cv2.resize(input_image, (300,300))
 aug_image = cv2.imread('green.jpeg')
-aug_image = cv2.resize(aug_image, (300,300), interpolation = cv2.INTER_AREA)
+aug_image = cv2.resize(aug_image, (300,300))
 
 w, h, c = input_image.shape
 
@@ -24,7 +24,7 @@ bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = True)
 
 while True:
     _, grayframe = cap.read()
-    grayframe = cv2.resize(grayframe, (600,600), interpolation = cv2.INTER_AREA)
+    grayframe = cv2.resize(grayframe, (600,600))
     grayframe_bw = cv2.cvtColor(grayframe, cv2.COLOR_BGR2GRAY)
 
     detector2 = cv2.ORB_create(1000)
